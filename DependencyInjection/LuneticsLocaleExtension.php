@@ -66,7 +66,7 @@ class LuneticsLocaleExtension extends Extension
     /**
      * {@inheritDoc}
      */
-    public function getAlias()
+    public function getAlias(): string
     {
         return 'lunetics_locale';
     }
