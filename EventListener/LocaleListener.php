@@ -9,6 +9,7 @@
  */
 namespace Lunetics\LocaleBundle\EventListener;
 
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Psr\Log\LoggerInterface;
@@ -124,11 +125,11 @@ class LocaleListener implements EventSubscriberInterface
     /**
      * This Listener adds a vary header to all responses.
      *
-     * @param FilterResponseEvent $event
+     * @param ResponseEvent $event
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function onLocaleDetectedSetVaryHeader(FilterResponseEvent $event)
+    public function onLocaleDetectedSetVaryHeader(ResponseEvent $event)
     {
         $response = $event->getResponse();
         if (!$this->disableVaryHeader) {
