@@ -13,12 +13,13 @@ namespace Lunetics\LocaleBundle\Twig\Extension;
 
 use Lunetics\LocaleBundle\Templating\Helper\LocaleSwitchHelper;
 use Lunetics\LocaleBundle\Switcher\TargetInformationBuilder;
+use Twig\Extension\AbstractExtension;
 
 /**
  * @author Christophe Willemsen <willemsen.christophe@gmail.com>
  * @author Matthias Breddin <mb@lunetics.com>
  */
-class LocaleSwitcherExtension extends \Twig_Extension
+class LocaleSwitcherExtension extends AbstractExtension
 {
     /**
      * @var TargetInformationBuilder
