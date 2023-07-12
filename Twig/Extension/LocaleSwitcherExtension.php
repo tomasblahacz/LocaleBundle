@@ -14,6 +14,7 @@ namespace Lunetics\LocaleBundle\Twig\Extension;
 use Lunetics\LocaleBundle\Templating\Helper\LocaleSwitchHelper;
 use Lunetics\LocaleBundle\Switcher\TargetInformationBuilder;
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 /**
  * @author Christophe Willemsen <willemsen.christophe@gmail.com>
@@ -49,7 +50,7 @@ class LocaleSwitcherExtension extends AbstractExtension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('locale_switcher', array($this, 'renderSwitcher'), array('is_safe' => array('html'))),
+            new TwigFunction('locale_switcher', array($this, 'renderSwitcher'), array('is_safe' => array('html'))),
         );
     }
 
